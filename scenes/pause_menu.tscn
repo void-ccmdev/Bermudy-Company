@@ -7,7 +7,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_5d2l8"]
 font = ExtResource("1_myx47")
 font_size = 64
-outline_size = 4
+outline_size = 9
 outline_color = Color(0, 0, 0, 1)
 
 [node name="PauseMenu" type="Control"]
@@ -29,7 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0.3764706)
+color = Color(0, 0, 0, 0.627451)
 
 [node name="PausedText" type="Label" parent="."]
 layout_mode = 1
@@ -60,9 +60,9 @@ grow_vertical = 2
 theme = ExtResource("2_kukqi")
 theme_override_constants/separation = 14
 
-[node name="Play" type="Button" parent="Buttons"]
+[node name="Resume" type="Button" parent="Buttons"]
 layout_mode = 2
-text = "PLAY"
+text = "RESUME"
 
 [node name="MainMenu" type="Button" parent="Buttons"]
 layout_mode = 2
@@ -72,6 +72,6 @@ text = "MAIN MENU"
 layout_mode = 2
 text = "QUIT"
 
-[connection signal="pressed" from="Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Buttons/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Buttons/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]

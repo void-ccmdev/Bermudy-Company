@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cw07u8u0d4nh8"]
+[gd_scene load_steps=8 format=3 uid="uid://cw07u8u0d4nh8"]
 
 [ext_resource type="Script" uid="uid://bfnk6sqondw3f" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bjpmu5sklv5h8" path="res://addons/raytraced_audio/raytraced_audio_listener.gd" id="2_g2els"]
 [ext_resource type="Script" uid="uid://rg3nvi5irnyn" path="res://scripts/interaction_ray.gd" id="3_qhqgy"]
 [ext_resource type="FontFile" uid="uid://b5appcfsrtq48" path="res://fonts/VCR_OSD_MONO.ttf" id="4_dqkch"]
+[ext_resource type="PackedScene" uid="uid://k6jr1tb1xuw0" path="res://scenes/pause_menu.tscn" id="5_qlg0r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
 radius = 0.35
@@ -85,3 +86,7 @@ label_settings = SubResource("LabelSettings_qlg0r")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("5_qlg0r")]
+visible = false
+layout_mode = 1
