@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=4 uid="uid://buia8py52rmvt"]
+
+[ext_resource type="PackedScene" uid="uid://c2negj8tjqsyq" path="res://models/tree/Tree.blend" id="1_di124"]
+[ext_resource type="Texture2D" uid="uid://v761dwrjo4go" path="res://models/tree/TreeTexture.png" id="2_o2j8h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wkws8"]
+resource_name = "Material.001"
+transparency = 2
+alpha_scissor_threshold = 0.648
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("2_o2j8h")
+texture_filter = 2
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_iiebk"]
+_surfaces = [{
+"aabb": AABB(-5.054184, 0.014383316, -5.054184, 10.108368, 10.108368, 10.108368),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP9/AAD//////38AAP//AAD/fwAAAAD///9/AAD/fwAA//8AAP9///8AAAAA/38AAAAAAAD/f/////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_efi7s"]
+resource_name = "Tree_Plane"
+_surfaces = [{
+"aabb": AABB(-5.054184, 0.014383316, -5.054184, 10.108368, 10.108368, 10.108368),
+"attribute_data": PackedByteArray("AAD/////AAD/////AAAAAAAA/////wAA/////wAAAAA="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"material": SubResource("StandardMaterial3D_wkws8"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP9/AID//////38AgP//AAD/fwCAAAD///9/AID/fwAA////v/9///8AAP+//38AAAAA/7//f///////v/9/////f////3////9/////fwAA/38AAP9/AAD/fwAA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_iiebk")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qa2tf"]
+size = Vector3(0.31, 5, 0.31)
+
+[node name="Tree" instance=ExtResource("1_di124")]
+
+[node name="Plane" parent="." index="0"]
+mesh = SubResource("ArrayMesh_efi7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_qa2tf")

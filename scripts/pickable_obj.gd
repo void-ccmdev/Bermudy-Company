@@ -15,4 +15,4 @@ func pickup(player : CharacterBody3D):
 func _process(_delta: float) -> void:
 	if picked == true:
 		var ts = get_tree().create_tween()
-		ts.tween_property(self, "global_transform", hand_marker.global_transform, 0.1)
+		ts.tween_property(self, "global_transform", hand_marker.global_transform, 0.05)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c8r7wxlmpbjna"]
+[gd_scene load_steps=17 format=3 uid="uid://c8r7wxlmpbjna"]
 
 [ext_resource type="Texture2D" uid="uid://bvkiun62stww1" path="res://textures/Asphalt010_1K-JPG/Asphalt010_1K-JPG_Color.jpg" id="1_speln"]
 [ext_resource type="Texture2D" uid="uid://bxan3rl4nvecv" path="res://textures/Asphalt010_1K-JPG/Asphalt010_1K-JPG_NormalGL.jpg" id="2_c2rtx"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bjd1vh3gh3a1d" path="res://scenes/objects/interactable_obj_debug.tscn" id="5_6y21t"]
 [ext_resource type="Script" uid="uid://dooj1qh3pat4d" path="res://scripts/switch_obj.gd" id="6_ly0mc"]
 [ext_resource type="PackedScene" uid="uid://bc1skyf56nny2" path="res://scenes/objects/target_interact_obj_debug.tscn" id="7_2balx"]
+[ext_resource type="PackedScene" uid="uid://buia8py52rmvt" path="res://models/tree/tree.tscn" id="7_kqwfv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ly0mc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -22,7 +23,7 @@ sky = SubResource("Sky_2balx")
 tonemap_mode = 2
 glow_enabled = true
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.0405
+volumetric_fog_density = 0.0625
 volumetric_fog_length = 48.08
 volumetric_fog_detail_spread = 1.0980648
 adjustment_enabled = true
@@ -133,5 +134,52 @@ key_needed = NodePath("../InteractableObjDebug")
 
 [node name="TargetInteractObjDebug2" parent="Env/Interactables" instance=ExtResource("7_2balx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -5)
+
+[node name="Trees" type="Node3D" parent="Env"]
+
+[node name="Tree" parent="Env/Trees" instance=ExtResource("7_kqwfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -5)
+
+[node name="Tree2" parent="Env/Trees" instance=ExtResource("7_kqwfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="Tree3" parent="Env/Trees" instance=ExtResource("7_kqwfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2)
+
+[node name="Tree4" parent="Env/Trees" instance=ExtResource("7_kqwfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3)
+
+[node name="Tree5" parent="Env/Trees" instance=ExtResource("7_kqwfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6)
+
+[node name="Tree6" parent="Env/Trees" instance=ExtResource("7_kqwfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3)
+
+[node name="Tree7" parent="Env/Trees" instance=ExtResource("7_kqwfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -2)
+
+[node name="Tree8" parent="Env/Trees" instance=ExtResource("7_kqwfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -6)
+
+[node name="Tree9" parent="Env/Trees" instance=ExtResource("7_kqwfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -7)
+
+[node name="Tree10" parent="Env/Trees" instance=ExtResource("7_kqwfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -8)
+
+[node name="Tree11" parent="Env/Trees" instance=ExtResource("7_kqwfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
+
+[node name="Tree12" parent="Env/Trees" instance=ExtResource("7_kqwfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 1)
+
+[node name="Tree13" parent="Env/Trees" instance=ExtResource("7_kqwfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -7)
+
+[node name="Tree14" parent="Env/Trees" instance=ExtResource("7_kqwfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -13)
+
+[node name="Tree15" parent="Env/Trees" instance=ExtResource("7_kqwfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -12)
 
 [node name="Player" parent="." instance=ExtResource("4_c2rtx")]
