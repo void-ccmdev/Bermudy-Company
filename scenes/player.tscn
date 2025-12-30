@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://cw07u8u0d4nh8"]
+
+[ext_resource type="Script" uid="uid://bfnk6sqondw3f" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bjpmu5sklv5h8" path="res://addons/raytraced_audio/raytraced_audio_listener.gd" id="2_g2els"]
+[ext_resource type="Script" uid="uid://rg3nvi5irnyn" path="res://scripts/interaction_ray.gd" id="3_qhqgy"]
+[ext_resource type="FontFile" uid="uid://b5appcfsrtq48" path="res://fonts/VCR_OSD_MONO.ttf" id="4_dqkch"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
+radius = 0.35
+height = 1.75
+
+[sub_resource type="LabelSettings" id="LabelSettings_qlg0r"]
+font = ExtResource("4_dqkch")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera", "hand_marker") groups=["Player"]]
+script = ExtResource("1_3vyb7")
+head = NodePath("Head")
+camera = NodePath("Head/Camera3D")
+hand_marker = NodePath("Head/Camera3D/HandMarker")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+shape = SubResource("CapsuleShape3D_u8vuu")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="RaytracedAudioListener" type="AudioListener3D" parent="Head/Camera3D"]
+script = ExtResource("2_g2els")
+metadata/_custom_type_script = "uid://bjpmu5sklv5h8"
+
+[node name="InteractionRay" type="RayCast3D" parent="Head/Camera3D" node_paths=PackedStringArray("ui_obj_message", "hand_marker", "player")]
+target_position = Vector3(0, 0, -1.5)
+script = ExtResource("3_qhqgy")
+ui_obj_message = NodePath("../../../UI/ObjectMessageReader")
+hand_marker = NodePath("../HandMarker")
+player = NodePath("../../..")
+
+[node name="HandMarker" type="Marker3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.351, -0.283, -0.55)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Crosshair" type="ColorRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ObjectMessageReader" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22100002
+anchor_top = 0.509
+anchor_right = 0.77900004
+anchor_bottom = 0.58000004
+offset_left = 0.20399475
+offset_top = -0.11100769
+offset_right = -0.20404053
+offset_bottom = -0.11502075
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_qlg0r")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

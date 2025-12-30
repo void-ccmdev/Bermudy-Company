@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjd1vh3gh3a1d"]
+
+[ext_resource type="Script" uid="uid://ofny8e4ak8wf" path="res://scripts/pickable_obj.gd" id="1_7o7dt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ws3n0"]
+albedo_color = Color(0.2667014, 0.48485845, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7o7dt"]
+material = SubResource("StandardMaterial3D_ws3n0")
+size = Vector3(0.25, 0.25, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhoso"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="InteractableObjDebug" type="StaticBody3D" node_paths=PackedStringArray("collision") groups=["Interactable"]]
+script = ExtResource("1_7o7dt")
+collision = NodePath("CollisionShape3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_7o7dt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_bhoso")
