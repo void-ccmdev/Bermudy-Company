@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://k6jr1tb1xuw0"]
+[gd_scene load_steps=5 format=3 uid="uid://k6jr1tb1xuw0"]
 
+[ext_resource type="Script" uid="uid://cu5y0bf4m8ois" path="res://scripts/pause_menu.gd" id="1_kukqi"]
 [ext_resource type="FontFile" uid="uid://b5appcfsrtq48" path="res://fonts/VCR_OSD_MONO.ttf" id="1_myx47"]
 [ext_resource type="Theme" uid="uid://snhyie2f1tq6" path="res://ui_theme_1.tres" id="2_kukqi"]
 
@@ -10,6 +11,7 @@ outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
 [node name="PauseMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_kukqi")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -68,3 +71,7 @@ text = "MAIN MENU"
 [node name="Quit" type="Button" parent="Buttons"]
 layout_mode = 2
 text = "QUIT"
+
+[connection signal="pressed" from="Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Buttons/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]
