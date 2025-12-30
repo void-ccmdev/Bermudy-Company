@@ -13,7 +13,7 @@ config_version=5
 config/name="Bermudy Co."
 run/main_scene="uid://c8r7wxlmpbjna"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://textures/icon.svg"
+config/icon="uid://1oq3clymb3rr"
 
 [autoload]
 
