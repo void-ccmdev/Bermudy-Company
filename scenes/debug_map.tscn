@@ -1,8 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://c8r7wxlmpbjna"]
+[gd_scene load_steps=14 format=3 uid="uid://c8r7wxlmpbjna"]
 
-[ext_resource type="Texture2D" uid="uid://bvkiun62stww1" path="res://textures/Asphalt010_1K-JPG/Asphalt010_1K-JPG_Color.jpg" id="1_speln"]
-[ext_resource type="Texture2D" uid="uid://bxan3rl4nvecv" path="res://textures/Asphalt010_1K-JPG/Asphalt010_1K-JPG_NormalGL.jpg" id="2_c2rtx"]
-[ext_resource type="Texture2D" uid="uid://bwvd0ih54w33i" path="res://textures/Asphalt010_1K-JPG/Asphalt010_1K-JPG_Roughness.jpg" id="3_6y21t"]
+[ext_resource type="Material" uid="uid://dk22mppckgota" path="res://materials/asphalt.material" id="1_ly0mc"]
 [ext_resource type="PackedScene" uid="uid://cw07u8u0d4nh8" path="res://scenes/player.tscn" id="4_c2rtx"]
 [ext_resource type="PackedScene" uid="uid://bjd1vh3gh3a1d" path="res://scenes/objects/interactable_obj_debug.tscn" id="5_6y21t"]
 [ext_resource type="Script" uid="uid://dooj1qh3pat4d" path="res://scripts/switch_obj.gd" id="6_ly0mc"]
@@ -30,17 +28,8 @@ adjustment_enabled = true
 adjustment_contrast = 1.79
 adjustment_saturation = 1.25
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_as5s6"]
-albedo_texture = ExtResource("1_speln")
-roughness_texture = ExtResource("3_6y21t")
-normal_enabled = true
-normal_texture = ExtResource("2_c2rtx")
-uv1_scale = Vector3(0.25, 0.25, 0.25)
-uv1_triplanar = true
-texture_filter = 0
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_62hoa"]
-material = SubResource("StandardMaterial3D_as5s6")
+material = ExtResource("1_ly0mc")
 size = Vector2(100, 100)
 subdivide_width = 2
 subdivide_depth = 2
