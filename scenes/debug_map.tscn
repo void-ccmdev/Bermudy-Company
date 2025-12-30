@@ -72,53 +72,58 @@ visible = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Ground/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_c2rtx")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Env"]
+[node name="Cubes" type="Node3D" parent="Env"]
+
+[node name="Cube" type="MeshInstance3D" parent="Env/Cubes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50000024, -2.7879229)
 mesh = SubResource("BoxMesh_c2rtx")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Cubes/Cube"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Cubes/Cube/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_6y21t")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Env"]
+[node name="Cube2" type="MeshInstance3D" parent="Env/Cubes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0015955, 0.50000024, -2.7879229)
 mesh = SubResource("BoxMesh_c2rtx")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MeshInstance3D3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Cubes/Cube2"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MeshInstance3D3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Cubes/Cube2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_6y21t")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Env"]
+[node name="Cube3" type="MeshInstance3D" parent="Env/Cubes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0015955, 0.50000024, -2.7879229)
 mesh = SubResource("BoxMesh_c2rtx")
+skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MeshInstance3D4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Cubes/Cube3"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MeshInstance3D4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Cubes/Cube3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_6y21t")
 
-[node name="Player" parent="." instance=ExtResource("4_c2rtx")]
+[node name="Interactables" type="Node3D" parent="Env"]
 
-[node name="InteractableObjDebug" parent="." instance=ExtResource("5_6y21t")]
+[node name="InteractableObjDebug" parent="Env/Interactables" instance=ExtResource("5_6y21t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1500002, -3)
 message = "Pick Up"
 
-[node name="Switch" parent="." node_paths=PackedStringArray("target_object") instance=ExtResource("5_6y21t")]
+[node name="Switch" parent="Env/Interactables" node_paths=PackedStringArray("target_object") instance=ExtResource("5_6y21t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.1500002, -3)
 script = ExtResource("6_ly0mc")
 message = "Press"
 target_object = NodePath("../TargetInteractObjDebug")
 needs_key = false
 
-[node name="TargetInteractObjDebug" parent="." instance=ExtResource("7_2balx")]
+[node name="TargetInteractObjDebug" parent="Env/Interactables" instance=ExtResource("7_2balx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -5)
 
-[node name="Switch2" parent="." node_paths=PackedStringArray("target_object", "key_needed") instance=ExtResource("5_6y21t")]
+[node name="Switch2" parent="Env/Interactables" node_paths=PackedStringArray("target_object", "key_needed") instance=ExtResource("5_6y21t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.1500002, -3)
 script = ExtResource("6_ly0mc")
 message = "Press"
@@ -126,5 +131,7 @@ target_object = NodePath("../TargetInteractObjDebug2")
 needs_key = true
 key_needed = NodePath("../InteractableObjDebug")
 
-[node name="TargetInteractObjDebug2" parent="." instance=ExtResource("7_2balx")]
+[node name="TargetInteractObjDebug2" parent="Env/Interactables" instance=ExtResource("7_2balx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -5)
+
+[node name="Player" parent="." instance=ExtResource("4_c2rtx")]
