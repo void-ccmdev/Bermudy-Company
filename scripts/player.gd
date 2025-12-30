@@ -1,5 +1,4 @@
-extends CharacterBody3D
-
+extends CharacterBody3D 
 
 const NORMAL_SPEED : float = 4.75
 const SPRINT_SPEED : float = 6.5
