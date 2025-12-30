@@ -1,0 +1,43 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://snhyie2f1tq6"]
+
+[ext_resource type="FontFile" uid="uid://b5appcfsrtq48" path="res://fonts/VCR_OSD_MONO.ttf" id="1_blert"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhqgy"]
+bg_color = Color(0.29625973, 0.60625213, 0.9782391, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqkch"]
+bg_color = Color(1, 1, 1, 0.45882353)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qlg0r"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0, 0, 1, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[resource]
+default_font = ExtResource("1_blert")
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/constants/outline_size = 9
+Button/font_sizes/font_size = 31
+Button/fonts/font = ExtResource("1_blert")
+Button/styles/hover = SubResource("StyleBoxFlat_qhqgy")
+Button/styles/normal = SubResource("StyleBoxFlat_dqkch")
+Button/styles/pressed = SubResource("StyleBoxFlat_qlg0r")
