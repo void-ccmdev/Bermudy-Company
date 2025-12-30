@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bc1skyf56nny2"]
 
-[ext_resource type="Script" uid="uid://svthwjyj3gvh" path="res://spin_cube_debug.gd" id="1_6g2gd"]
+[ext_resource type="Script" uid="uid://svthwjyj3gvh" path="res://scripts/spin_cube_debug.gd" id="1_6g2gd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_eeb0j"]
 
