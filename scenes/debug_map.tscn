@@ -1,8 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://c8r7wxlmpbjna"]
+[gd_scene load_steps=22 format=3 uid="uid://c8r7wxlmpbjna"]
 
-[ext_resource type="Script" uid="uid://lxy2mv82ok26" path="res://addons/post_processing/node/post_process.gd" id="1_62hoa"]
 [ext_resource type="Material" uid="uid://dk22mppckgota" path="res://materials/asphalt.material" id="1_ly0mc"]
-[ext_resource type="Script" uid="uid://cg6f2h5eujpn6" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="2_k2hi8"]
 [ext_resource type="PackedScene" uid="uid://cw07u8u0d4nh8" path="res://scenes/player.tscn" id="4_c2rtx"]
 [ext_resource type="PackedScene" uid="uid://bjd1vh3gh3a1d" path="res://scenes/objects/interactable_obj_debug.tscn" id="5_6y21t"]
 [ext_resource type="Script" uid="uid://dooj1qh3pat4d" path="res://scripts/switch_obj.gd" id="6_ly0mc"]
@@ -11,12 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://buia8py52rmvt" path="res://models/tree/tree.tscn" id="7_kqwfv"]
 [ext_resource type="Material" uid="uid://drl3m6e4m7w6a" path="res://materials/metal_wall.material" id="8_k2hi8"]
 [ext_resource type="AudioStream" uid="uid://bh3pdcoklf3p2" path="res://audio/AudioDebugSongIrisOut.mp3" id="9_0v7pg"]
-
-[sub_resource type="Resource" id="Resource_qyrlb"]
-script = ExtResource("2_k2hi8")
-ChromaticAberration = true
-StrenghtCA = 0.5
-metadata/_custom_type_script = "uid://cg6f2h5eujpn6"
 
 [sub_resource type="FogMaterial" id="FogMaterial_62hoa"]
 density = 0.1873
@@ -80,11 +72,6 @@ radial_segments = 10
 rings = 5
 
 [node name="DebugMap" type="Node3D"]
-
-[node name="PostProcess" type="CanvasLayer" parent="."]
-script = ExtResource("1_62hoa")
-configuration = SubResource("Resource_qyrlb")
-metadata/_custom_type_script = "uid://lxy2mv82ok26"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 4, 0)
