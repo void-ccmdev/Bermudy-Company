@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxd36wnjqewi4"]
+[gd_scene load_steps=15 format=3 uid="uid://bxd36wnjqewi4"]
 
 [ext_resource type="Material" uid="uid://dtspijqfaxur8" path="res://materials/water.material" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://bs28mco3c6qbp" path="res://scripts/main_menu.gd" id="1_wu84c"]
 [ext_resource type="FontFile" uid="uid://ckhaljb855yj" path="res://fonts/HomeVideoBold-R90Dv.ttf" id="2_ekxnf"]
 [ext_resource type="FontFile" uid="uid://b5appcfsrtq48" path="res://fonts/VCR_OSD_MONO.ttf" id="3_bqqt6"]
 
@@ -84,6 +85,7 @@ Button/styles/normal = SubResource("StyleBoxFlat_dqkch")
 Button/styles/pressed = SubResource("StyleBoxFlat_qlg0r")
 
 [node name="MainMenu" type="Node3D"]
+script = ExtResource("1_wu84c")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 4, 0)
@@ -144,14 +146,18 @@ offset_bottom = -0.01600647
 theme = SubResource("Theme_wu84c")
 theme_override_constants/separation = 14
 
-[node name="Play" type="Button" parent="UI/Buttons"]
+[node name="PlayButton" type="Button" parent="UI/Buttons"]
 layout_mode = 2
 text = "Play"
 
-[node name="Credits" type="Button" parent="UI/Buttons"]
+[node name="CreditsButton" type="Button" parent="UI/Buttons"]
 layout_mode = 2
 text = "Credits"
 
-[node name="Quit" type="Button" parent="UI/Buttons"]
+[node name="QuitButton" type="Button" parent="UI/Buttons"]
 layout_mode = 2
 text = "Quit"
+
+[connection signal="pressed" from="UI/Buttons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="UI/Buttons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="UI/Buttons/QuitButton" to="." method="_on_quit_button_pressed"]
