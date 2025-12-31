@@ -1,0 +1,157 @@
+[gd_scene load_steps=14 format=3 uid="uid://bxd36wnjqewi4"]
+
+[ext_resource type="Material" uid="uid://dtspijqfaxur8" path="res://materials/water.material" id="1_l6cm7"]
+[ext_resource type="FontFile" uid="uid://ckhaljb855yj" path="res://fonts/HomeVideoBold-R90Dv.ttf" id="2_ekxnf"]
+[ext_resource type="FontFile" uid="uid://b5appcfsrtq48" path="res://fonts/VCR_OSD_MONO.ttf" id="3_bqqt6"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_l6cm7"]
+density = 0.1873
+height_falloff = 1e-05
+edge_fade = 0.09012509
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ekxnf"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+sky_curve = 0.43922535
+ground_bottom_color = Color(0.21025872, 0.17766249, 0.14099354, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_curve = 0.09849161
+
+[sub_resource type="Sky" id="Sky_2balx"]
+sky_material = SubResource("ProceduralSkyMaterial_ekxnf")
+
+[sub_resource type="Environment" id="Environment_bqqt6"]
+background_mode = 2
+background_color = Color(0.76240367, 0.76240367, 0.76240367, 1)
+sky = SubResource("Sky_2balx")
+tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_length = 48.08
+volumetric_fog_detail_spread = 1.0980648
+adjustment_enabled = true
+adjustment_contrast = 1.79
+adjustment_saturation = 1.25
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ekxnf"]
+material = ExtResource("1_l6cm7")
+size = Vector2(100, 100)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bqqt6"]
+font = ExtResource("2_ekxnf")
+font_size = 50
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhqgy"]
+bg_color = Color(0.29625973, 0.60625213, 0.9782391, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqkch"]
+bg_color = Color(1, 1, 1, 0.45882353)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qlg0r"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0, 0, 1, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_wu84c"]
+default_font = ExtResource("3_bqqt6")
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/constants/outline_size = 9
+Button/font_sizes/font_size = 31
+Button/fonts/font = ExtResource("3_bqqt6")
+Button/styles/hover = SubResource("StyleBoxFlat_qhqgy")
+Button/styles/normal = SubResource("StyleBoxFlat_dqkch")
+Button/styles/pressed = SubResource("StyleBoxFlat_qlg0r")
+
+[node name="MainMenu" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 4, 0)
+shadow_enabled = true
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+size = Vector3(100, 20, 100)
+material = SubResource("FogMaterial_l6cm7")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bqqt6")
+
+[node name="Env" type="Node3D" parent="."]
+
+[node name="Sea" type="MeshInstance3D" parent="Env"]
+mesh = SubResource("PlaneMesh_ekxnf")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.70710677, -0.08938306, 0.70143473, 0, 0.9919785, 0.12640673, -0.7071068, -0.08938305, 0.7014347, 2, 3, 2)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014
+anchor_top = 0.034
+anchor_right = 0.587
+anchor_bottom = 0.17300001
+offset_left = -0.06400013
+offset_top = -0.016000748
+offset_right = -0.11199951
+offset_bottom = -0.052001953
+text = "Bermudy Co."
+label_settings = SubResource("LabelSettings_bqqt6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.017
+anchor_top = 0.43800002
+anchor_right = 0.238
+anchor_bottom = 0.78400004
+offset_left = 0.20799923
+offset_top = 0.08799744
+offset_right = -0.08799744
+offset_bottom = -0.01600647
+theme = SubResource("Theme_wu84c")
+theme_override_constants/separation = 14
+
+[node name="Play" type="Button" parent="UI/Buttons"]
+layout_mode = 2
+text = "Play"
+
+[node name="Credits" type="Button" parent="UI/Buttons"]
+layout_mode = 2
+text = "Credits"
+
+[node name="Quit" type="Button" parent="UI/Buttons"]
+layout_mode = 2
+text = "Quit"

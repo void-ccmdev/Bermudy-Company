@@ -28,7 +28,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/post_processing/plugin.cfg", "res://addons/raytraced_audio/plugin.cfg")
+enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg", "res://addons/post_processing/plugin.cfg", "res://addons/raytraced_audio/plugin.cfg")
 
 [global_group]
 
