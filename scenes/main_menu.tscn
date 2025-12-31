@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bxd36wnjqewi4"]
+[gd_scene load_steps=17 format=3 uid="uid://bxd36wnjqewi4"]
 
 [ext_resource type="Material" uid="uid://dtspijqfaxur8" path="res://materials/water.material" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://bs28mco3c6qbp" path="res://scripts/main_menu.gd" id="1_wu84c"]
 [ext_resource type="FontFile" uid="uid://ckhaljb855yj" path="res://fonts/HomeVideoBold-R90Dv.ttf" id="2_ekxnf"]
 [ext_resource type="FontFile" uid="uid://b5appcfsrtq48" path="res://fonts/VCR_OSD_MONO.ttf" id="3_bqqt6"]
+[ext_resource type="Shader" uid="uid://cer4agvqhpbu3" path="res://shaders/chromatic_abberation.gdshader" id="5_8ln24"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_l6cm7"]
 density = 0.1873
@@ -84,6 +85,15 @@ Button/styles/hover = SubResource("StyleBoxFlat_qhqgy")
 Button/styles/normal = SubResource("StyleBoxFlat_dqkch")
 Button/styles/pressed = SubResource("StyleBoxFlat_qlg0r")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rtw2f"]
+shader = ExtResource("5_8ln24")
+shader_parameter/r_displacement = Vector2(1.5, 0)
+shader_parameter/g_displacement = Vector2(0, 0)
+shader_parameter/b_displacement = Vector2(-1.5, 0)
+shader_parameter/height = 0.7
+shader_parameter/width = 0.5
+shader_parameter/fade = 0.7
+
 [node name="MainMenu" type="Node3D"]
 script = ExtResource("1_wu84c")
 
@@ -148,7 +158,8 @@ theme_override_constants/separation = 14
 
 [node name="PlayButton" type="Button" parent="UI/Buttons"]
 layout_mode = 2
-text = "Play"
+theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
+text = "DEBUG"
 
 [node name="CreditsButton" type="Button" parent="UI/Buttons"]
 layout_mode = 2
@@ -157,6 +168,16 @@ text = "Credits"
 [node name="QuitButton" type="Button" parent="UI/Buttons"]
 layout_mode = 2
 text = "Quit"
+
+[node name="CHRABBER" type="ColorRect" parent="UI"]
+material = SubResource("ShaderMaterial_rtw2f")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="pressed" from="UI/Buttons/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="UI/Buttons/CreditsButton" to="." method="_on_credits_button_pressed"]

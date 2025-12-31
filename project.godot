@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bermudy Co."
-run/main_scene="uid://c8r7wxlmpbjna"
+run/main_scene="uid://bxd36wnjqewi4"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://1oq3clymb3rr"
 
