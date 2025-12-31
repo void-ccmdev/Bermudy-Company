@@ -3,11 +3,12 @@ extends Node3D
 const NEXT_SCENE : PackedScene = preload("res://scenes/debug_map.tscn")
 
 @export var fade_anim_player : AnimationPlayer
+@export var water_anim_player : AnimationPlayer
 @export var time_offset : float = 0.5
 
 
 func _ready() -> void:
-	pass
+	water_anim_player.play("Water")
 
 func _on_play_button_pressed() -> void:
 	fade_anim_player.play("Fade")
