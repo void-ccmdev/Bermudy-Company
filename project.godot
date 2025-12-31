@@ -93,3 +93,7 @@ sprint={
 
 reverb_bus=&"RaytracedReverb"
 ambient_bus=&"RaytracedAmbient"
+
+[rendering]
+
+shading/overrides/force_vertex_shading=true

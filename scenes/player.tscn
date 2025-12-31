@@ -1,14 +1,31 @@
-[gd_scene load_steps=8 format=3 uid="uid://cw07u8u0d4nh8"]
+[gd_scene load_steps=10 format=3 uid="uid://cw07u8u0d4nh8"]
 
 [ext_resource type="Script" uid="uid://bfnk6sqondw3f" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bjpmu5sklv5h8" path="res://addons/raytraced_audio/raytraced_audio_listener.gd" id="2_g2els"]
 [ext_resource type="Script" uid="uid://rg3nvi5irnyn" path="res://scripts/interaction_ray.gd" id="3_qhqgy"]
 [ext_resource type="FontFile" uid="uid://b5appcfsrtq48" path="res://fonts/VCR_OSD_MONO.ttf" id="4_dqkch"]
+[ext_resource type="Shader" uid="uid://d034l41hb06m8" path="res://shaders/vhs.gdshader" id="4_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://k6jr1tb1xuw0" path="res://scenes/pause_menu.tscn" id="5_qlg0r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
 radius = 0.35
 height = 1.75
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fjrip"]
+shader = ExtResource("4_tuyoq")
+shader_parameter/vhs_resolution = Vector2(320, 240)
+shader_parameter/samples = 2
+shader_parameter/crease_noise = 1.0
+shader_parameter/crease_opacity = 0.5
+shader_parameter/filter_intensity = 0.1
+shader_parameter/tape_crease_smear = 0.2
+shader_parameter/tape_crease_intensity = 0.2
+shader_parameter/tape_crease_jitter = 0.1
+shader_parameter/tape_crease_speed = 0.5
+shader_parameter/tape_crease_discoloration = 1.0
+shader_parameter/bottom_border_thickness = 6.0
+shader_parameter/bottom_border_jitter = 6.0
+shader_parameter/noise_intensity = 0.1
 
 [sub_resource type="LabelSettings" id="LabelSettings_qlg0r"]
 font = ExtResource("4_dqkch")
@@ -33,6 +50,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 
 [node name="RaytracedAudioListener" type="AudioListener3D" parent="Head/Camera3D"]
 script = ExtResource("2_g2els")
+echo_room_size_multiplier = 4.0
+echo_interpolation = 0.52
 metadata/_custom_type_script = "uid://bjpmu5sklv5h8"
 
 [node name="InteractionRay" type="RayCast3D" parent="Head/Camera3D" node_paths=PackedStringArray("ui_obj_message", "hand_marker", "player")]
@@ -47,6 +66,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.351, -0.283, -0.55)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VHS" type="ColorRect" parent="UI"]
+material = SubResource("ShaderMaterial_fjrip")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
