@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bxd36wnjqewi4"]
+[gd_scene load_steps=20 format=3 uid="uid://bxd36wnjqewi4"]
 
 [ext_resource type="Material" uid="uid://dtspijqfaxur8" path="res://materials/water.material" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://bs28mco3c6qbp" path="res://scripts/main_menu.gd" id="1_wu84c"]
@@ -94,8 +94,46 @@ shader_parameter/height = 0.7
 shader_parameter/width = 0.5
 shader_parameter/fade = 0.7
 
-[node name="MainMenu" type="Node3D"]
+[sub_resource type="Animation" id="Animation_8ln24"]
+resource_name = "Fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rtw2f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oa1go"]
+_data = {
+&"Fade": SubResource("Animation_8ln24"),
+&"RESET": SubResource("Animation_rtw2f")
+}
+
+[node name="MainMenu" type="Node3D" node_paths=PackedStringArray("fade_anim_player")]
 script = ExtResource("1_wu84c")
+fade_anim_player = NodePath("UI/FadeAnim")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 4, 0)
@@ -126,50 +164,55 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Title" type="Label" parent="UI"]
+[node name="MainMenu" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="UI/MainMenu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.014
 anchor_top = 0.034
 anchor_right = 0.587
 anchor_bottom = 0.17300001
-offset_left = -0.06400013
-offset_top = -0.016000748
-offset_right = -0.11199951
-offset_bottom = -0.052001953
+offset_left = 7.44
+offset_top = 9.639999
+offset_right = 314.52
+offset_bottom = 49.08
 text = "Bermudy Co."
 label_settings = SubResource("LabelSettings_bqqt6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Buttons" type="VBoxContainer" parent="UI"]
+[node name="Buttons" type="VBoxContainer" parent="UI/MainMenu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.017
 anchor_top = 0.43800002
 anchor_right = 0.238
 anchor_bottom = 0.78400004
-offset_left = 0.20799923
-offset_top = 0.08799744
-offset_right = -0.08799744
-offset_bottom = -0.01600647
+offset_left = 9.32
+offset_top = 124.479996
+offset_right = 127.479996
+offset_bottom = 222.64
 theme = SubResource("Theme_wu84c")
 theme_override_constants/separation = 14
 
-[node name="PlayButton" type="Button" parent="UI/Buttons"]
+[node name="PlayButton" type="Button" parent="UI/MainMenu/Buttons"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
 text = "DEBUG"
 
-[node name="CreditsButton" type="Button" parent="UI/Buttons"]
+[node name="CreditsButton" type="Button" parent="UI/MainMenu/Buttons"]
 layout_mode = 2
 text = "Credits"
 
-[node name="QuitButton" type="Button" parent="UI/Buttons"]
+[node name="QuitButton" type="Button" parent="UI/MainMenu/Buttons"]
 layout_mode = 2
 text = "Quit"
 
-[node name="CHRABBER" type="ColorRect" parent="UI"]
+[node name="CHRABBER" type="ColorRect" parent="UI/MainMenu"]
 material = SubResource("ShaderMaterial_rtw2f")
 layout_mode = 1
 anchors_preset = 15
@@ -179,6 +222,21 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[connection signal="pressed" from="UI/Buttons/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="UI/Buttons/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="UI/Buttons/QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="Fade" type="ColorRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="FadeAnim" type="AnimationPlayer" parent="UI"]
+libraries = {
+&"": SubResource("AnimationLibrary_oa1go")
+}
+
+[connection signal="pressed" from="UI/MainMenu/Buttons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="UI/MainMenu/Buttons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="UI/MainMenu/Buttons/QuitButton" to="." method="_on_quit_button_pressed"]
