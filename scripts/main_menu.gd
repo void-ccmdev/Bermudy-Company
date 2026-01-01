@@ -1,6 +1,6 @@
 extends Node3D
 
-const NEXT_SCENE : PackedScene = preload("res://scenes/debug_map.tscn")
+@export var  NEXT_SCENE : PackedScene
 
 @export var fade_anim_player : AnimationPlayer
 @export var water_anim_player : AnimationPlayer
