@@ -97,3 +97,4 @@ ambient_bus=&"RaytracedAmbient"
 [rendering]
 
 shading/overrides/force_vertex_shading=true
+occlusion_culling/use_occlusion_culling=true
