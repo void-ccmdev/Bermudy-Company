@@ -120,17 +120,18 @@ environment = SubResource("Environment_jyhfs")
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3582153, 6.287842, -32.04724)
+visible = false
 size = Vector3(199.8197, 27.424316, 223.92603)
 material = SubResource("FogMaterial_0wfyh")
 
 [node name="Env" type="Node3D" parent="."]
 
-[node name="main_island" parent="Env" instance=ExtResource("1_0wfyh")]
+[node name="MainIsland" parent="Env" instance=ExtResource("1_0wfyh")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/main_island/IslandMesh" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainIsland/IslandMesh" index="0"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/main_island/IslandMesh/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainIsland/IslandMesh/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_jyhfs")
 
 [node name="Sea" type="MeshInstance3D" parent="Env"]
@@ -143,311 +144,311 @@ libraries = {
 &"": SubResource("AnimationLibrary_85g3d")
 }
 
-[node name="MainBuilding" type="Node3D" parent="Env"]
+[node name="Areal" type="Node3D" parent="Env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.203, 0, 7.731)
 
-[node name="Ground" type="MeshInstance3D" parent="Env/MainBuilding"]
+[node name="Ground" type="MeshInstance3D" parent="Env/Areal"]
 mesh = SubResource("BoxMesh_tefeu")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/Ground"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/Ground"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/Ground/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/Ground/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tbgi4")
 
-[node name="OutsideWalls" type="Node3D" parent="Env/MainBuilding"]
+[node name="OutsideWalls" type="Node3D" parent="Env/Areal"]
 
-[node name="Wall" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 2, -15)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall12" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall12" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 2, 15)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall12"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall12"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall12/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall12/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall12"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall12"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall13" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall13" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 2, 15)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall13"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall13"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall13/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall13/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall13"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall13"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall14" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall14" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 2, 15)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall14"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall14"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall14/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall14/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall14"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall14"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall15" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall15" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 2, 15)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall15"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall15"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall15/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall15/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall15"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall15"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall16" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall16" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 2, 15)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall16"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall16"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall16/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall16/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall16"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall16"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall2" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall2" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 2, -15)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall2"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall2"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall2"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall3" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall3" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 2, -15)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall3"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall3"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall3"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall6" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall6" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -15, 2, -12.5)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall6"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall6/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall6"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall6"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall7" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall7" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -15, 2, -7.5)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall7"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall7"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall7/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall7/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall7"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall7"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall8" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall8" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -15, 2, -2.5)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall8"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall8"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall8/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall8/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall8"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall8"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall9" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall9" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -15, 2, 2.5)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall9"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall9"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall9/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall9/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall9"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall9"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall10" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall10" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -15, 2, 7.5)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall10"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall10"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall10/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall10/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall10"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall10"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall11" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall11" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -15, 2, 12.5)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall11"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall11"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall11/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall11/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall11"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall11"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall17" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall17" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, 15, 2, 12.500001)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall17"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall17"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall17/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall17/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall17"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall17"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall18" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall18" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, 15, 2, 7.500001)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall18"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall18"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall18/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall18/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall18"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall18"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall19" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall19" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, 15, 2, 2.500001)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall19"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall19"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall19/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall19/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall19"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall19"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall21" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall21" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, 15, 2, -7.499999)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall21"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall21"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall21/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall21/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall21"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall21"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall22" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall22" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, 15, 2, -12.499999)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall22"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall22"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall22/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall22/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall22"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall22"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall4" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall4" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 2, -15)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall4"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall4/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall4"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall4"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Wall5" type="MeshInstance3D" parent="Env/MainBuilding/OutsideWalls"]
+[node name="Wall5" type="MeshInstance3D" parent="Env/Areal/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 2, -15)
 mesh = SubResource("BoxMesh_o6xl0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Env/MainBuilding/OutsideWalls/Wall5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/OutsideWalls/Wall5"]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainBuilding/OutsideWalls/Wall5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/OutsideWalls/Wall5/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tipki")
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/MainBuilding/OutsideWalls/Wall5"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/OutsideWalls/Wall5"]
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
@@ -456,4 +457,4 @@ occluder = SubResource("BoxOccluder3D_85g3d")
 [node name="Player" parent="." instance=ExtResource("2_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
 
-[editable path="Env/main_island"]
+[editable path="Env/MainIsland"]
