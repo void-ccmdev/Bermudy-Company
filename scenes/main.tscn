@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://baisg4djd57p7"]
+[gd_scene load_steps=30 format=3 uid="uid://baisg4djd57p7"]
 
 [ext_resource type="PackedScene" uid="uid://bi8swe1cp7450" path="res://models/main_island/main_island.blend" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://dkmfdbicbu2wu" path="res://scripts/main.gd" id="1_jyhfs"]
@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://dk22mppckgota" path="res://materials/asphalt.material" id="4_tbgi4"]
 [ext_resource type="Material" uid="uid://drl3m6e4m7w6a" path="res://materials/metal_wall.material" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cp46a81lrpxfo" path="res://scenes/objects/trees.tscn" id="6_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://bvy8j3o3jhpt8" path="res://textures/bc_logo.tga" id="8_tipki"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sugp2"]
 sky_top_color = Color(0.61745477, 0.6174547, 0.61745507, 1)
@@ -30,6 +31,12 @@ ssao_power = 3.2153172
 ssil_enabled = true
 ssil_radius = 15.74
 glow_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.50928617, 0.50928617, 0.50928617, 1)
+fog_density = 1.0
+fog_depth_curve = 0.8408965
+fog_depth_begin = 5.0
+fog_depth_end = 18.0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0
 volumetric_fog_length = 48.08
@@ -107,6 +114,30 @@ data = PackedVector3Array(-2.5, 2, 0.099999994, 2.5, 2, 0.099999994, -2.5, -2, 0
 [sub_resource type="BoxOccluder3D" id="BoxOccluder3D_85g3d"]
 size = Vector3(5, 4, 0.2)
 
+[sub_resource type="FogMaterial" id="FogMaterial_o6xl0"]
+density = -0.2
+
+[sub_resource type="BoxMesh" id="BoxMesh_tipki"]
+material = ExtResource("5_tefeu")
+size = Vector3(5, 8, 0.2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_85g3d"]
+data = PackedVector3Array(-2.5, 4, 0.099999994, 2.5, 4, 0.099999994, -2.5, -4, 0.099999994, 2.5, 4, 0.099999994, 2.5, -4, 0.099999994, -2.5, -4, 0.099999994, 2.5, 4, -0.099999994, -2.5, 4, -0.099999994, 2.5, -4, -0.099999994, -2.5, 4, -0.099999994, -2.5, -4, -0.099999994, 2.5, -4, -0.099999994, 2.5, 4, 0.099999994, 2.5, 4, -0.099999994, 2.5, -4, 0.099999994, 2.5, 4, -0.099999994, 2.5, -4, -0.099999994, 2.5, -4, 0.099999994, -2.5, 4, -0.099999994, -2.5, 4, 0.099999994, -2.5, -4, -0.099999994, -2.5, 4, 0.099999994, -2.5, -4, 0.099999994, -2.5, -4, -0.099999994, 2.5, 4, 0.099999994, -2.5, 4, 0.099999994, 2.5, 4, -0.099999994, -2.5, 4, 0.099999994, -2.5, 4, -0.099999994, 2.5, 4, -0.099999994, -2.5, -4, 0.099999994, 2.5, -4, 0.099999994, -2.5, -4, -0.099999994, 2.5, -4, 0.099999994, 2.5, -4, -0.099999994, -2.5, -4, -0.099999994)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_choun"]
+size = Vector3(5, 4, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ya4ey"]
+material = ExtResource("5_tefeu")
+size = Vector3(5, 4, 0.2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_eb6dy"]
+data = PackedVector3Array(-2.5, 2, 0.099999994, 2.5, 2, 0.099999994, -2.5, -2, 0.099999994, 2.5, 2, 0.099999994, 2.5, -2, 0.099999994, -2.5, -2, 0.099999994, 2.5, 2, -0.099999994, -2.5, 2, -0.099999994, 2.5, -2, -0.099999994, -2.5, 2, -0.099999994, -2.5, -2, -0.099999994, 2.5, -2, -0.099999994, 2.5, 2, 0.099999994, 2.5, 2, -0.099999994, 2.5, -2, 0.099999994, 2.5, 2, -0.099999994, 2.5, -2, -0.099999994, 2.5, -2, 0.099999994, -2.5, 2, -0.099999994, -2.5, 2, 0.099999994, -2.5, -2, -0.099999994, -2.5, 2, 0.099999994, -2.5, -2, 0.099999994, -2.5, -2, -0.099999994, 2.5, 2, 0.099999994, -2.5, 2, 0.099999994, 2.5, 2, -0.099999994, -2.5, 2, 0.099999994, -2.5, 2, -0.099999994, 2.5, 2, -0.099999994, -2.5, -2, 0.099999994, 2.5, -2, 0.099999994, -2.5, -2, -0.099999994, 2.5, -2, 0.099999994, 2.5, -2, -0.099999994, -2.5, -2, -0.099999994)
+
+[sub_resource type="BoxMesh" id="BoxMesh_trceg"]
+material = ExtResource("5_tefeu")
+size = Vector3(17, 1, 21.5)
+
 [node name="Main" type="Node3D" node_paths=PackedStringArray("sea_anim_player")]
 script = ExtResource("1_jyhfs")
 sea_anim_player = NodePath("Env/Sea/AnimationPlayer")
@@ -120,7 +151,6 @@ environment = SubResource("Environment_jyhfs")
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3582153, 6.287842, -32.04724)
-visible = false
 size = Vector3(199.8197, 27.424316, 223.92603)
 material = SubResource("FogMaterial_0wfyh")
 
@@ -133,6 +163,8 @@ visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainIsland/IslandMesh/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_jyhfs")
+
+[node name="Trees" parent="Env/MainIsland" instance=ExtResource("6_o6xl0")]
 
 [node name="Sea" type="MeshInstance3D" parent="Env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7, 0)
@@ -452,9 +484,290 @@ shape = SubResource("ConcavePolygonShape3D_tipki")
 visible = false
 occluder = SubResource("BoxOccluder3D_85g3d")
 
-[node name="Trees" parent="Env" instance=ExtResource("6_o6xl0")]
+[node name="MainBuilding" type="Node3D" parent="Env/Areal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="FogVolume" type="FogVolume" parent="Env/Areal/MainBuilding"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 1)
+size = Vector3(14, 8, 20)
+material = SubResource("FogMaterial_o6xl0")
+
+[node name="Walls" type="Node3D" parent="Env/Areal/MainBuilding"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="Wall" type="MeshInstance3D" parent="Env/Areal/MainBuilding/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 4, -9)
+mesh = SubResource("BoxMesh_tipki")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/MainBuilding/Walls/Wall"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/MainBuilding/Walls/Wall/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_85g3d")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/MainBuilding/Walls/Wall"]
+visible = false
+occluder = SubResource("BoxOccluder3D_choun")
+
+[node name="Wall2" type="MeshInstance3D" parent="Env/Areal/MainBuilding/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, -9)
+mesh = SubResource("BoxMesh_tipki")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/MainBuilding/Walls/Wall2"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/MainBuilding/Walls/Wall2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_85g3d")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/MainBuilding/Walls/Wall2"]
+visible = false
+occluder = SubResource("BoxOccluder3D_choun")
+
+[node name="Wall3" type="MeshInstance3D" parent="Env/Areal/MainBuilding/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, -9)
+mesh = SubResource("BoxMesh_tipki")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/MainBuilding/Walls/Wall3"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/MainBuilding/Walls/Wall3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_85g3d")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/MainBuilding/Walls/Wall3"]
+visible = false
+occluder = SubResource("BoxOccluder3D_choun")
+
+[node name="Wall7" type="MeshInstance3D" parent="Env/Areal/MainBuilding/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 10.999999)
+mesh = SubResource("BoxMesh_tipki")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/MainBuilding/Walls/Wall7"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/MainBuilding/Walls/Wall7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_85g3d")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/MainBuilding/Walls/Wall7"]
+visible = false
+occluder = SubResource("BoxOccluder3D_choun")
+
+[node name="Wall8" type="MeshInstance3D" parent="Env/Areal/MainBuilding/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, 10.999999)
+mesh = SubResource("BoxMesh_tipki")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/MainBuilding/Walls/Wall8"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/MainBuilding/Walls/Wall8/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_85g3d")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/MainBuilding/Walls/Wall8"]
+visible = false
+occluder = SubResource("BoxOccluder3D_choun")
+
+[node name="Wall9" type="MeshInstance3D" parent="Env/Areal/MainBuilding/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 4, 10.999999)
+mesh = SubResource("BoxMesh_tipki")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/MainBuilding/Walls/Wall9"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/MainBuilding/Walls/Wall9/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_85g3d")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/MainBuilding/Walls/Wall9"]
+visible = false
+occluder = SubResource("BoxOccluder3D_choun")
+
+[node name="Wall4" type="MeshInstance3D" parent="Env/Areal/MainBuilding/Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.5, 4, -6.5)
+mesh = SubResource("BoxMesh_tipki")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/MainBuilding/Walls/Wall4"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/MainBuilding/Walls/Wall4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_85g3d")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/MainBuilding/Walls/Wall4"]
+visible = false
+occluder = SubResource("BoxOccluder3D_choun")
+
+[node name="Wall5" type="MeshInstance3D" parent="Env/Areal/MainBuilding/Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.5, 4, -1.5)
+mesh = SubResource("BoxMesh_tipki")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/MainBuilding/Walls/Wall5"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/MainBuilding/Walls/Wall5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_85g3d")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/MainBuilding/Walls/Wall5"]
+visible = false
+occluder = SubResource("BoxOccluder3D_choun")
+
+[node name="Wall6" type="MeshInstance3D" parent="Env/Areal/MainBuilding/Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.5, 4, 8.499999)
+mesh = SubResource("BoxMesh_tipki")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/MainBuilding/Walls/Wall6"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/MainBuilding/Walls/Wall6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_85g3d")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/MainBuilding/Walls/Wall6"]
+visible = false
+occluder = SubResource("BoxOccluder3D_choun")
+
+[node name="Wall10" type="MeshInstance3D" parent="Env/Areal/MainBuilding/Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10.5, 4, 8.499999)
+mesh = SubResource("BoxMesh_tipki")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/MainBuilding/Walls/Wall10"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/MainBuilding/Walls/Wall10/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_85g3d")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/MainBuilding/Walls/Wall10"]
+visible = false
+occluder = SubResource("BoxOccluder3D_choun")
+
+[node name="Wall11" type="MeshInstance3D" parent="Env/Areal/MainBuilding/Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10.5, 4, -6.500001)
+mesh = SubResource("BoxMesh_tipki")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/MainBuilding/Walls/Wall11"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/MainBuilding/Walls/Wall11/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_85g3d")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/MainBuilding/Walls/Wall11"]
+visible = false
+occluder = SubResource("BoxOccluder3D_choun")
+
+[node name="Wall12" type="MeshInstance3D" parent="Env/Areal/MainBuilding/Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10.5, 4, -1.500001)
+mesh = SubResource("BoxMesh_tipki")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/MainBuilding/Walls/Wall12"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/MainBuilding/Walls/Wall12/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_85g3d")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/MainBuilding/Walls/Wall12"]
+visible = false
+occluder = SubResource("BoxOccluder3D_choun")
+
+[node name="Wall13" type="MeshInstance3D" parent="Env/Areal/MainBuilding/Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10.5, 6, 3.499999)
+mesh = SubResource("BoxMesh_ya4ey")
+skeleton = NodePath("../..")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/MainBuilding/Walls/Wall13"]
+visible = false
+occluder = SubResource("BoxOccluder3D_choun")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/MainBuilding/Walls/Wall13"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/MainBuilding/Walls/Wall13/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_eb6dy")
+
+[node name="Wall14" type="MeshInstance3D" parent="Env/Areal/MainBuilding/Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.5, 6, 3.499999)
+mesh = SubResource("BoxMesh_ya4ey")
+skeleton = NodePath("../..")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Env/Areal/MainBuilding/Walls/Wall14"]
+visible = false
+occluder = SubResource("BoxOccluder3D_choun")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Env/Areal/MainBuilding/Walls/Wall14"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/Areal/MainBuilding/Walls/Wall14/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_eb6dy")
+
+[node name="Ceiling" type="MeshInstance3D" parent="Env/Areal/MainBuilding"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 1)
+mesh = SubResource("BoxMesh_trceg")
+
+[node name="Lights" type="Node3D" parent="Env/Areal/MainBuilding"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Env/Areal/MainBuilding/Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4, 0, 7)
+light_energy = 10.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 18.0
+spot_angle = 53.372265
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Env/Areal/MainBuilding/Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4, 0, 7)
+light_energy = 10.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 18.0
+spot_angle = 53.372265
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Env/Areal/MainBuilding/Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4, 0, 1)
+light_energy = 10.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 18.0
+spot_angle = 53.372265
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Env/Areal/MainBuilding/Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4, 0, 1)
+light_energy = 10.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 18.0
+spot_angle = 53.372265
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Env/Areal/MainBuilding/Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4, 0, -6)
+light_energy = 10.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 18.0
+spot_angle = 53.372265
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Env/Areal/MainBuilding/Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4, 0, -6)
+light_energy = 10.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 18.0
+spot_angle = 53.372265
 
 [node name="Player" parent="." instance=ExtResource("2_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 16)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0280964, 3.4151282, -1.1635392)
+pixel_size = 0.0186
+shaded = true
+alpha_cut = 3
+texture = ExtResource("8_tipki")
 
 [editable path="Env/MainIsland"]
