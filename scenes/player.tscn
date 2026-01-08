@@ -74,6 +74,12 @@ player = NodePath("../../..")
 [node name="HandMarker" type="Marker3D" parent="Head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.351, -0.283, -0.55)
 
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D"]
+light_energy = 4.0
+shadow_enabled = true
+spot_range = 8.047991
+spot_angle = 27.134638
+
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
