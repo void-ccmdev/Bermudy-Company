@@ -173,6 +173,89 @@ visible = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Env/MainIsland/IslandMesh/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_choun")
 
+[node name="Rocks" type="Node3D" parent="Env/MainIsland"]
+
+[node name="big_rock" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(4.21, 0, 0, 0, 4.21, 0, 0, 0, 4.21, -32.01802, 0, -44.33734)
+
+[node name="big_rock2" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(1.955879, 0, 3.7280877, 0, 4.21, 0, -3.7280877, 0, 1.955879, -30.305885, 0, -30.64024)
+
+[node name="big_rock18" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.9640021, 0, 1.8374779, 0, 2.075, 0, -1.8374779, 0, 0.9640021, -8.827087, 0, -15.356994)
+
+[node name="big_rock19" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.9640021, 0, 1.8374779, 0, 2.075, 0, -1.8374779, 0, 0.9640021, -23.906145, 0, 5.4275446)
+
+[node name="big_rock20" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.9640021, 0, 1.8374779, 0, 2.075, 0, -1.8374779, 0, 0.9640021, -2.0116577, 3.8146973e-06, -39.7618)
+
+[node name="big_rock21" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.4645793, 0, 0.8855315, 0, 1, 0, -0.8855315, 0, 0.4645793, -27.927223, -3.8146973e-06, -15.981945)
+
+[node name="big_rock22" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.4645793, 0, 0.8855315, 0, 1, 0, -0.8855315, 0, 0.4645793, -17.64738, -3.8146973e-06, -4.0525312)
+
+[node name="big_rock23" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.4645793, 0, 0.8855315, 0, 1, 0, -0.8855315, 0, 0.4645793, -15.553969, -3.8146973e-06, 21.746258)
+
+[node name="big_rock24" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.4645793, 0, 0.8855315, 0, 1, 0, -0.8855315, 0, 0.4645793, 20.125015, -3.8146973e-06, 33.408474)
+
+[node name="big_rock25" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.4645793, 0, 0.8855315, 0, 1, 0, -0.8855315, 0, 0.4645793, 36.95337, -3.8146973e-06, 14.28373)
+
+[node name="big_rock26" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.4645793, 0, 0.8855315, 0, 1, 0, -0.8855315, 0, 0.4645793, 19.208488, -3.8146973e-06, -14.653255)
+
+[node name="big_rock27" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.4645793, 0, 0.8855315, 0, 1, 0, -0.8855315, 0, 0.4645793, 39.626266, -7.6293945e-06, -12.340492)
+
+[node name="big_rock3" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(2.131698, -1.5227542, 3.29563, 2.2734444, 3.5395393, 0.16493073, -2.830443, 1.6961637, 2.6145196, -20.033058, 0, -38.11139)
+
+[node name="big_rock4" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(2.131698, -1.5227542, 3.29563, 2.2734444, 3.5395393, 0.16493073, -2.830443, 1.6961637, 2.6145196, 54.678, -6.055, -34.065)
+
+[node name="big_rock5" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(3.4339786, -2.1525464, -1.1394835, 1.4049045, 3.3596206, -2.1126478, 1.9895029, 1.342974, 3.458668, 43.627, 1.8, -34.065)
+
+[node name="big_rock6" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(3.4339786, -2.1525464, -1.1394835, 1.4049045, 3.3596206, -2.1126478, 1.9895029, 1.342974, 3.458668, 47.985, -2.585, -2.313)
+
+[node name="big_rock7" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(3.4339786, -2.1525464, -1.1394835, 1.4049045, 3.3596206, -2.1126478, 1.9895029, 1.342974, 3.458668, -29.061172, -2.585, 22.279526)
+
+[node name="big_rock8" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(3.4339786, -2.1525464, -1.1394835, 1.4049045, 3.3596206, -2.1126478, 1.9895029, 1.342974, 3.458668, -24.236061, -2.585, 32.708)
+
+[node name="big_rock9" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(3.4339786, -2.1525464, -1.1394835, 1.4049045, 3.3596206, -2.1126478, 1.9895029, 1.342974, 3.458668, 37.24524, -2.585, 35.042732)
+
+[node name="big_rock10" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(3.4339786, -2.1525464, -1.1394835, 1.4049045, 3.3596206, -2.1126478, 1.9895029, 1.342974, 3.458668, 9.851036, -2.585, 39.867844)
+
+[node name="big_rock11" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(3.4339786, -2.1525464, -1.1394835, 1.4049045, 3.3596206, -2.1126478, 1.9895029, 1.342974, 3.458668, 23.236847, -2.585, 45.1599)
+
+[node name="big_rock12" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(3.2619574, 0.29900134, 2.644677, 1.4049045, 3.3596206, -2.1126478, -2.260523, 2.519451, 2.5032954, 49.236847, -2.585, 30.1599)
+
+[node name="big_rock13" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.9326086, 1.8988793, 3.63986, 4.1038656, -0.32909632, -0.8798108, -0.11230171, 3.742998, -1.9239118, 44.566967, 11.094397, 30.714548)
+
+[node name="big_rock14" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.9326086, 1.8988793, 3.63986, 4.1038656, -0.32909632, -0.8798108, -0.11230171, 3.742998, -1.9239118, 32.284115, 11.094397, 39.027115)
+
+[node name="big_rock15" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.9326086, 1.8988793, 3.63986, 4.1038656, -0.32909632, -0.8798108, -0.11230171, 3.742998, -1.9239118, 14.097519, 11.094397, 42.980717)
+
+[node name="big_rock16" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.9326086, 1.8988793, 3.63986, 4.1038656, -0.32909632, -0.8798108, -0.11230171, 3.742998, -1.9239118, -24.723568, -2.1239386, 39.20961)
+
+[node name="big_rock17" parent="Env/MainIsland/Rocks" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.055884153, 4.021722, -1.2436688, 4.103865, -0.3290963, -0.87981075, -0.937682, -1.2006371, -3.9247046, -15.004707, -2.1239386, 39.20961)
+
 [node name="Sea" type="MeshInstance3D" parent="Env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7, 0)
 mesh = SubResource("PlaneMesh_tefeu")
@@ -783,20 +866,5 @@ transform = Transform3D(-0.9999913, 0, 0.004171215, 0, 1, 0, -0.004171215, 0, -0
 
 [node name="shipping_container2" parent="." instance=ExtResource("10_choun")]
 transform = Transform3D(-0.99276155, 0, -0.12010229, 0, 1, 0, 0.12010229, 0, -0.99276155, 18.086407, 3, -3.7125828)
-
-[node name="big_rock" parent="." instance=ExtResource("11_ya4ey")]
-transform = Transform3D(1.27, 0, 0, 0, 1.27, 0, 0, 0, 1.27, -0.6822667, 0, -12.720816)
-
-[node name="big_rock5" parent="." instance=ExtResource("11_ya4ey")]
-transform = Transform3D(1.27, 0, 0, 0, -0.24213158, 1.2467046, 0, -1.2467046, -0.24213158, -2.7459464, 5.4810605, -10.267474)
-
-[node name="big_rock2" parent="." instance=ExtResource("11_ya4ey")]
-transform = Transform3D(0.63626975, -0.5262368, -0.96495366, 0.28968322, 1.1558437, -0.43932763, 1.0602567, 0, 0.6991105, -3.5786526, 0, -14.223019)
-
-[node name="big_rock3" parent="." instance=ExtResource("11_ya4ey")]
-transform = Transform3D(0.6362697, -0.5262368, -0.9649536, -0.22207212, 1.0304315, -0.7083746, 1.07645, 0.52362734, 0.42422816, -3.3339732, 0, -11.297556)
-
-[node name="big_rock4" parent="." instance=ExtResource("11_ya4ey")]
-transform = Transform3D(0.6919033, 1.0132241, 0.32794285, 0.28094363, 0.20356718, -1.2216917, -1.027249, 0.73813033, -0.11323635, -3.3339732, 1.2672391, -13.255358)
 
 [editable path="Env/MainIsland"]
